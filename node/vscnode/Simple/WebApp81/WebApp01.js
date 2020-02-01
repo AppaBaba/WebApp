@@ -7,4 +7,7 @@ http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});  
     res.write('Appa says Hi There!'); //response to the client
     res.end(); //end response
-}).listen(8080); //webserver listens on port 8080
+}).listen(8081); //webapp81 listens on port 8081
+
+// print message to console
+console.log('WebApp81 running at http://127.0.0.1:8081/');
