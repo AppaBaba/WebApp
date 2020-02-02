@@ -1,6 +1,7 @@
+var page = require('./page');
 
 function PageDisp(res, pn){
-  if(PageMap[pn]){
+  if(page.PageMap[pn]){
     // http header with OK message(200)
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(PageMap[pn]); 
@@ -12,3 +13,5 @@ function PageDisp(res, pn){
     res.end();
   }
 }
+
+exports.PageDisp = PageDisp;
