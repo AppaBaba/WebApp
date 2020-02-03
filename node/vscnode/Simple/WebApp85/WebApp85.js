@@ -1,7 +1,7 @@
 
 var http = require('http'); // include http module
 var url = require('url');   // include url module
-var disp = required('./disp');
+var disp = require('./disp');
  
 // create a server
 http.createServer(OnReq).listen(8085); //WebApp85 listens on port 8085
