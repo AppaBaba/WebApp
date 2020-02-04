@@ -1,4 +1,4 @@
-var page = require('./map');
+var map = require('./map');
 
 function PageDisp(res, pn){
   if(map.PageMap[pn]){
