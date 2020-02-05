@@ -3,7 +3,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 # HTTPRequestHandler class
-class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
+class PyhttpRH(BaseHTTPRequestHandler):
 
   # GET
   def do_GET(self):
@@ -20,12 +20,15 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(bytes(message, "utf8"))
         return
 
-def run():
+def webserver():
   print('starting server...')
 
   # Server settings
-  server_address = ('127.0.0.1', 8080)
-  httpd = HTTPServer(server_address, testHTTPServer_RequestHandler)
+  host = '127.0.0.1'
+  port = 8081
+  ws = HTTPServer((host, port), PyhttpRH)
   print('running server...')
-  httpd.serve_forever()
+  ws.serve_forever()
 
+
+webserver()
