@@ -14,7 +14,7 @@ class PyhttpRH(BaseHTTPRequestHandler):
         self.send_header('Content-type','text/html')
         self.end_headers()
 
-        # Send message back to client
+        # Send http text back to client
         self.wfile.write(bytes("<h1>AppaBaba Home Page</h1>", "utf-8"))
         self.wfile.write(bytes("<body>", "utf-8"))
         self.wfile.write(bytes("<p>Hi there from appa.</p>", "utf-8"))
