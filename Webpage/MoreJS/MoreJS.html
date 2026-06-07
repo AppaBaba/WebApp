@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website with JS Menu</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        background-color: #060505;
+        overflow: hidden;
+    }
+    nav a {
+        float: left;
+        display: block;
+        color: green;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    nav a:hover {
+        background-color: #575757;
+    }
+    .page {
+        display: none; /* Hide all pages by default */
+        padding: 20px;
+    }
+    .active {
+        display: block; /* Show active page */
+    }
+</style>
+</head>
+<body>
+
+<!-- Navigation Menu -->
+<nav>
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('about')">About</a>
+    <a href="#" onclick="showPage('contact')">Contact</a>
+</nav>
+
+<!-- Pages -->
+<div id="home" class="page active">
+    <h1>Welcome to Home Page</h1>
+    <p>This is the home page content.</p>
+</div>
+
+<div id="about" class="page">
+    <h1>About Us</h1>
+    <p>This is the about page content.</p>
+</div>
+
+<div id="contact" class="page">
+    <h1>Contact Us</h1>
+    <p>This is the contact page content.</p>
+</div>
+
+<script>
+/**
+ * Function to show a specific page and hide others
+ * @param {string} pageId - The ID of the page to display
+ */
+function showPage(pageId) {
+    try {
+        // Hide all pages
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => page.classList.remove('active'));
+
+        // Show the selected page
+        const activePage = document.getElementById(pageId);
+        if (!activePage) throw new Error("Page not found: " + pageId);
+        activePage.classList.add('active');
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+</script>
+
+<!-- Links -->
+    <section>
+        <h2>Useful Links</h2>
+        <p>
+            Go to the real <a href="FiveTopRoundedTabs.html" target="_self">Nextpage</a>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <hr>
+        <p>More Javascript Webpage</p>
+    </footer>
+
+</body>
+</html>

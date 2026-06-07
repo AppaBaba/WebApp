@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webpage with JavaScript</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+    /* Navigation bar styling */
+    nav {
+        background-color: #0c0c0c;
+        overflow: hidden;
+    }
+    nav a {
+        float: left;
+        display: block;
+        color: yellowgreen;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    nav a:hover {
+        background-color: #575757;
+    }
+    /* Mobile menu button */
+    .menu-btn {
+        display: none;
+        float: right;
+        padding: 14px 20px;
+        cursor: pointer;
+        color: white;
+        background-color: #333;
+        border: none;
+        font-size: 18px;
+    }
+    /* Responsive menu */
+    @media screen and (max-width: 600px) {
+        nav a { display: none; }
+        nav a.active { display: block; }
+        .menu-btn { display: block; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Navigation Menu -->
+<nav>
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    <a href="index.html">Home</a>
+    <a href="WebHTML.html">HTML</a>
+    <a href="WebCSS.html">CSS</a>
+    <a href="WebJS.html">Javascript</a>
+</nav>
+
+<!-- Page Content -->
+<div style="padding:20px;">
+    <h1>Javascrpt Webpage</h1>
+    <p>Use the menu above to navigate to other pages.</p>
+</div>
+
+<script>
+    // Toggle menu for mobile view
+    function toggleMenu() {
+        const links = document.querySelectorAll("nav a");
+        links.forEach(link => {
+            link.classList.toggle("active");
+        });
+    }
+</script>
+
+<!-- Links -->
+    <section>
+        <h2>Useful Links</h2>
+        <p>
+            Go to <a href="MoreJS/MoreJS.html" target="_self">MoreJS</a>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <hr>
+        <p>Javascript Webpage</p>
+    </footer>
+
+</body>
+</html>
